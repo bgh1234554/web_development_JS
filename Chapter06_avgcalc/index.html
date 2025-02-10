@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>평균값 계산기 만들기</title>
+  <script>
+    // let val1 = prompt("1번 숫자를 입력해주세요");
+    // //인텔리제이의 Ctrl+D -> Alt+Shift+아래 화살표
+    // let val2 = prompt("2번 숫자를 입력해주세요");
+    // alert((Number(val1) + Number(val2))/2);
+    //문자열을 숫자로 변환하는 가장 일반적인 방법은 Number 함수를 사용하는 것입니다.
+    //다른 형변환 방법으로는 parseInt와 parseFloat 함수가 있습니다.
+    //parseInt는 문자열을 정수로 변환하고,
+    //parseFloat는 문자열을 부동 소수점 숫자로 변환합니다
+    //숫자를 문자열로 바꿀때는 toString 메서드나 String() 함수를 사용하는 것이다.
+    let times = prompt("숫자 몇개를 입력하실 건가요?");
+    let sum = 0;
+    // for(let i = 1; i <= times; i++){
+    //   sum+=Number(prompt(`${i}번째 숫자를 입력해주세요`));
+    // }
+    let i=1;
+    while(i<=times){
+      sum+=Number(prompt(`${i}번째 숫자를 입력해주세요`));
+      i++;
+    }
+    alert(`평균은 ${sum/times}입니다.`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
