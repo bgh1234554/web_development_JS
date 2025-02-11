@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>가위바위보</title>
-  <script src="./script/script.js"></script>
+  <script src="./script/script2.js"></script>
+  <style>
+    body{
+      text-align: center;
+      color: plum;
+      background-color: #2f2f2f;
+    }
+    button{
+      width: 100px;
+      height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: "NanumGothicCoding";
+      padding: 10px 20px;
+      background-color: bisque;
+      border-color: blanchedalmond;
+    }
+  </style>
 </head>
 <body>
-  
+  <!--1차로 썼던 함수 - onScissorsClick(), onRockClick(), onPaperClick()-->
+  <p><b>가위바위보 게임</b></p>
+  <button onclick="onButtonClick('가위')">가위</button>
+  <button onclick="onButtonClick('바위')">바위</button>
+  <button onclick="onButtonClick('보')">보</button>
 </body>
 </html>
