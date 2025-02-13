@@ -9,7 +9,7 @@
 .div-scoreboard.inner{
   margin:auto;
   border:2px solid #fff;
-
+  box-sizing: border-box;
 }
 
 .div-shots-left{
@@ -72,5 +72,4 @@ button{
 .div-control-name{
   font-size: 20px;
   margin-bottom: 10px;
-  
 }
