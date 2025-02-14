@@ -1,6 +1,6 @@
 let comScore = 0; //매번 초기화되면 안되니까 전역변수로 지정.
 let userScore = 0;
-let comRemain = 15;
+// let comRemain = 15;
 let userRemain = 15;
 let isComputerTurn = true;
 function onComputerShoot(){
@@ -8,28 +8,28 @@ function onComputerShoot(){
   let textElement = document.getElementById('text');
   let comScoreElement = document.getElementById('computer-score');
   //점수 총합을 대입할 변수 선언
-  if(userRemain===0){
-    let comScore2 = Number(document.getElementById('computer-score').innerHTML);
-    let userScore2 = Number(document.getElementById('user-score').innerHTML);
-    if(comScore2>userScore2){
-      alert("컴퓨터가 승리하였습니다!")
-    }
-    else if(comScore2<userScore2){
-      alert("당신이 승리하였습니다!")
-    }
-    else{
-      alert("비겼습니다!")
-    }
-    return;    
-  }
+  // if(userRemain===0){
+  //   //let comScore2 = Number(document.getElementById('computer-score').innerHTML);
+  //   //let userScore2 = Number(document.getElementById('user-score').innerHTML);
+  //   if(comScore>userScore){
+  //     alert("컴퓨터가 승리하였습니다!")
+  //   }
+  //   else if(comScore<userScore){
+  //     alert("당신이 승리하였습니다!")
+  //   }
+  //   else{
+  //     alert("비겼습니다!")
+  //   }
+  //   return;    
+  // }
   if(!isComputerTurn){
     alert("사용자의 차례입니다.");
     return;
   }
-  if(comRemain === 0){
-    alert("컴퓨터가 슛을 마쳤습니다.");
-    return;
-  }
+  // if(comRemain === 0){
+  //   alert("컴퓨터가 슛을 마쳤습니다.");
+  //   return;
+  // }
   if(shootType === 2){
     if(Math.random() < 0.5){
       // 2점 슛을 1/2확률로 성공시킨다고 하자.
@@ -54,7 +54,7 @@ function onComputerShoot(){
       textElement.innerHTML = "컴퓨터가 3점 슛을 실패했습니다!";
     }
   }
-  comRemain--;
+  //comRemain--;
   isComputerTurn=false;
 
   let computerButtons = document.getElementsByClassName('btn-computer');
@@ -104,11 +104,34 @@ function onUserShoot(shootType){
   isComputerTurn=true;
 
   let computerButtons = document.getElementsByClassName('btn-computer');
-  for(let i=0;i<computerButtons.length;i++){
-    computerButtons[i].disabled = false;
+  if(userRemain!==0){
+    for(let i=0;i<computerButtons.length;i++){
+      computerButtons[i].disabled = false;
+    }
   }
   let userButtons = document.getElementsByClassName('btn-user');
   for(let i=0;i<userButtons.length;i++){
     userButtons[i].disabled = true;
   }
+  if(userRemain===0){
+    let textString = document.getElementById('text').innerHTML;
+    if(comScore>userScore){
+      //alert("컴퓨터가 승리하였습니다!")
+      textString = '컴퓨터가 승리하였습니다!'
+    }
+    else if(comScore<userScore){
+      //alert("당신이 승리하였습니다!")
+      textString = '당신이 승리하였습니다!'
+    }
+    else{
+      //alert("비겼습니다!")
+      textString = '비겼습니다!'
+    }
+    return;    
+  }
+  //alert을 쓸 때는 남은 슛 횟수가 1일때 창이 뜨고, 이후에
+  //남은 슛 횟수가 0이 되는데,
+  //textElement.innerHTML을 수정하니까 그런 일이 발생하지 않는다.
 }
+//let comScore2 = Number(document.getElementById('computer-score').innerHTML);
+//let userScore2 = Number(document.getElementById('user-score').innerHTML);
