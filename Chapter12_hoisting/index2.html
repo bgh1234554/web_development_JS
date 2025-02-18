@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Hoisting</title>
+</head>
+<body bgcolor="2f2f2f">
+  <script>
+    //함수 선언문 방식
+    hello();
+    
+    function hello(){
+      console.log('Hello, World!');
+    }
+    //변수는 초기화 이전까지는 undefined가 나오지만,
+    //함수는 정의가 호출보다 밑에 있다고 하더라도, 정상적으로 실행된다.
+    
+    //함수 표현식 방식
+    // greet(); // ReferenceError: Cannot access 'greet' before initialization
+    // const greet = function(){
+    //   console.log('Hello');
+    // }
+    //위의 코드는 함수 표현식 방식이라 변수처럼 동작하기 때문에 TDZ가 발생하므로
+    //함수 표현식을 사용할 때는 선언 후에 호출해야 한다.
+
+    //const 대신 var을 사용하면?
+    console.log(greet2); //undefined
+    //greet2(); // Uncaught TypeError: greet2 is not a function
+    var greet2 = function(){
+      console.log('Hello');
+    }
+    greet2(); //Hello
+    console.log(greet2()); //Hello, undefined
+    //var을 사용하면 undefined가 저장된 상태(호이스팅된 상태)에서
+    //함수를 호출하려고 하기 때문에, TypeError가 발생한다.
+    // 함수 표현식은 let과 const를 사용하는 것이 안전하다.
+  </script>
+</body>
+</html>

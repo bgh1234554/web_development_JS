@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addEventListener Tutorial 2 - 클래스명 바꾸기</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script/script.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  <style>
+    .active {
+      background-color: yellow;
+    }
+    .active2{
+      background-color: red;
+    }
+  </style>
+<body>
+  <button class="btn">Click This</button>
+  <script>
+    //$ 사용 예시
+    $('.btn').on('click',function(){
+      $(this).toggleClass('active');
+    })
+    // 개발자 도구에서 보면 btn 클래스명이 btn active로 바뀌는 것을 확인할 수 있다.
+    //JS 사용 예시
+    document.querySelector('.btn').addEventListener('click',function(){
+      this.classList.toggle('active2');
+    })
+  </script>
+</body>
+</html>

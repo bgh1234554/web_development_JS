@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla JS vs JQuery 3 - addEventListener Tutorial</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script/script.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+<body>
+  <button class="btn">Click This</button>
+  <script>
+    //$ 사용 예시
+    //익명함수 형태로 작성하는 것에 익숙해져야 한다.
+    $('.btn').on('click', function(){
+      alert('This used JQuery');
+    });
+    //JS 사용
+    //addEventListener()와 내부의 'click' 및 익명함수 argument가 제일 중요하다.
+    document.querySelector('.btn').addEventListener('click', function(){
+      alert('This used Vanilla JS');
+    });
+  </script>
+</body>
+</html>

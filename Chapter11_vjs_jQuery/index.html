@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla JS vs JQuery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script/script.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+<body>
+  <button class="btn">Click Me</button>
+  <script>
+    // $ 사용 예시
+    $('.btn').text('This used JQuery');
+    //QuerySelector 사용 예시
+    //document.querySelector('.btn').innerHTML = "This used Vanilla JS";
+    //주석 풀었을 때 어떻게 되는지 확인하면 됨.
+  </script>
+</body>
+</html>

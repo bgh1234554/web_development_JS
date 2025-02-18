@@ -15,21 +15,8 @@ let game = {
   isComputerTurn: true
 };
 
-// 비동기 함수
-// function showText(s){
-//   // let textElement = document.getElementById('text');
-//   let $textElement = $('#text');
-//   $textElement.fadeIn();
-//   $textElement.fadeOut();
-//   $textElement.html(s); //sentence or string
-//   $textElement.fadeIn();
-// }
-
-//동기 함수
 function showText(s){
-  // let textElement = document.getElementById('text');
   let $textElement = $('#text');
-  //function() 익명함수 사용
   $textElement.fadeOut(400, function(){
     $textElement.html(s); //sentence or string
     $textElement.fadeIn();
@@ -37,35 +24,18 @@ function showText(s){
 }
 
 function updateComScore(score){
-  //let comScoreElement = document.getElementById('computer-score');
-  // let $comScoreElement = $('#computer-score');
-  // computer.score += score;
-  // $comScoreElement.innerHTML = computer.score; 
-  //jQuery 오브젝트로 리턴되었을 때 innerHTML 대신 사용하는 방법. 
   computer.score+=score;
   let $comScoreElement = $('#computer-score');
   $comScoreElement.animateNumber({number: computer.score});
 }
 
 function updateUserScore(score){
-  //let userScoreElement = document.getElementById('user-score');
-  // let $userScoreElement = $('#user-score');
-  // user.score += score;
-  // $userScoreElement.html(user.score);
-  //제이쿼리 플러그인 적용 후
   user.score+=score;
   let $userScoreElement = $('#user-score');
   $userScoreElement.animateNumber({number: user.score});
 }
 
 function disableComButton(flag){
-  // let computerButtons = document.getElementsByClassName('btn-computer');
-  // if(game.userRemain!==0){
-  //   for(let i=0;i<computerButtons.length;i++){
-  //     computerButtons[i].disabled = flag;
-  //   }
-  // }
-  //저 배열과 for문과 조건문을 다 없애고 한줄로 대체할 수 있다.
   if(game.userRemain!==0){
     $('.btn-computer').prop('disabled',flag);
   }

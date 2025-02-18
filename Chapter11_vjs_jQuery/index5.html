@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>애니메이션 적용하기</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script/script.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  <style>
+    .hidden{
+      opacity: 0; /*불투명도를 0으로 설정*/
+      transition: opacity 0.5s;
+    }
+  </style>
+<body>
+  <button id="fadeBtn">Fade Out</button>
+  <div id="box" style="width:100px; height:100px; background-color: red; margin: 10px"></div>
+  <script>
+    //$ 사용 예시
+    $('#fadeBtn').on('click',function(){
+      $('#box').fadeOut();
+    })
+    //JS 사용 예시
+    document.querySelector('#fadeBtn').addEventListener('click',function(){
+      document.querySelector('#box').classList.add('hidden');
+    })
+  </script>
+</body>
+</html>

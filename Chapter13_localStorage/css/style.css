@@ -1,0 +1,50 @@
+body{
+  background-color: #2f2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#container{
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1)
+}
+
+/*
+고급 선택자: 태그[속성="값"){속성:값;}
+선택된 태그들 중에서 지정된 속성이 속성값으로 설정된 요소만 선택하는 선택자
+*/
+
+input[type="text"]{
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+button{
+  width: 100%;
+  padding: 10px;
+  background-color: lime;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #32cd32; /* 대표적인 버튼의 두번째 색 */
+}
+
+/* HTML에 작성한 부분. li태그를 추가하는 JS를 만들어야 한다.*/
+ul{
+  list-style: none;
+  padding: 0;
+}
