@@ -1,13 +1,18 @@
-.border-list-container{
+/*.border-list-container 오타 수정*/
+.board-list-container {
   box-sizing: border-box;
   padding: 20px 40px;
   height: 100%;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.board-box{
+.board-box {
   display: flex;
-  flex-direction: column; /* 글이 밑으로 나오도록 */
+  flex-direction: column;
   box-sizing: border-box;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -16,7 +21,7 @@
   height: 250px;
   background-color: #fafafa;
   transition: all 0.2s ease-in-out;
-  &:hover{
+  &:hover {
     box-shadow: 0px 0px 10px 5px #eeeeee44;
   }
 }
